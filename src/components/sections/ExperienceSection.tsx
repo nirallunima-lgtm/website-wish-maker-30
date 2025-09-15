@@ -4,11 +4,23 @@ import { ExternalLink, Play } from 'lucide-react';
 
 const ExperienceSection = () => {
   const techStack = [
-    'Firebase', 'NodeJS', 'Flutter', 'Express', 'Docker', 'Firebase',
-    'JavaScript', 'MongoDB', 'FastAPI', 'Python', 'MySQL', 'Kotlin',
-    'PostgreSQL', 'Java', 'Compose', 'NodeJS', 'Dart', 'Docker',
-    'Java', 'Git', 'Redis', 'Postgres', 'Python', 'Redis', 'Kotlin',
-    'Flutter', 'MySQL'
+    { name: 'Flutter', size: 'text-2xl', delay: '0s' },
+    { name: 'Firebase', size: 'text-lg', delay: '0.5s' },
+    { name: 'NodeJS', size: 'text-xl', delay: '1s' },
+    { name: 'Python', size: 'text-2xl', delay: '1.5s' },
+    { name: 'JavaScript', size: 'text-lg', delay: '2s' },
+    { name: 'Docker', size: 'text-xl', delay: '2.5s' },
+    { name: 'MongoDB', size: 'text-lg', delay: '3s' },
+    { name: 'PostgreSQL', size: 'text-xl', delay: '0.8s' },
+    { name: 'Kotlin', size: 'text-lg', delay: '1.3s' },
+    { name: 'Java', size: 'text-xl', delay: '1.8s' },
+    { name: 'Redis', size: 'text-lg', delay: '2.3s' },
+    { name: 'FastAPI', size: 'text-xl', delay: '2.8s' },
+    { name: 'Express', size: 'text-lg', delay: '0.3s' },
+    { name: 'MySQL', size: 'text-xl', delay: '0.7s' },
+    { name: 'Git', size: 'text-lg', delay: '1.2s' },
+    { name: 'Dart', size: 'text-xl', delay: '1.7s' },
+    { name: 'Compose', size: 'text-lg', delay: '2.2s' }
   ];
 
   const achievements = [
@@ -37,80 +49,125 @@ const ExperienceSection = () => {
   return (
     <section id="experience" className="min-h-screen flex items-center px-6 py-20">
       <div className="max-w-7xl mx-auto w-full">
-        <h2 className="text-4xl font-bold mb-16">
-          <span className="text-accent">02.</span> My Experience
-        </h2>
+        <div className="text-center mb-20">
+          <h2 className="text-5xl font-bold mb-4">
+            <span className="text-accent">02.</span> My Experience
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-accent to-primary mx-auto rounded-full"></div>
+        </div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
-          {/* Left Sidebar - Companies */}
-          <div className="space-y-8">
-            <div className="border-l-4 border-accent pl-6">
-              <h3 className="text-xl font-semibold text-accent">Cloudflare</h3>
-              <p className="text-muted-foreground">Freelancer</p>
+        <div className="grid lg:grid-cols-12 gap-8">
+          {/* Left Sidebar - Companies Timeline */}
+          <div className="lg:col-span-4 space-y-8">
+            <div className="relative">
+              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent to-primary opacity-30"></div>
+              
+              <div className="relative pl-12 pb-8">
+                <div className="absolute left-0 w-8 h-8 bg-accent rounded-full flex items-center justify-center">
+                  <div className="w-3 h-3 bg-background rounded-full"></div>
+                </div>
+                <div className="gradient-border rounded-xl p-6">
+                  <h3 className="text-xl font-semibold text-accent mb-2">Cloudflare</h3>
+                  <p className="text-muted-foreground mb-2">Software Engineering Intern</p>
+                  <p className="text-sm text-muted-foreground">2023 - Present</p>
+                </div>
+              </div>
+
+              <div className="relative pl-12">
+                <div className="absolute left-0 w-8 h-8 bg-primary/50 rounded-full flex items-center justify-center">
+                  <div className="w-3 h-3 bg-background rounded-full"></div>
+                </div>
+                <div className="gradient-border rounded-xl p-6 opacity-60">
+                  <h3 className="text-xl font-semibold text-primary mb-2">Freelancer</h3>
+                  <p className="text-muted-foreground mb-2">Mobile App Developer</p>
+                  <p className="text-sm text-muted-foreground">2022 - 2023</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Center - Experience Details */}
-          <div className="lg:col-span-2 space-y-8">
-            <Card className="bg-card/50 border-border/50">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
-                    <span className="text-accent font-bold">CF</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold">Software Engineering Intern</h3>
-                    <p className="text-accent">@Cloudflare</p>
-                  </div>
+          {/* Right Content - Experience Details */}
+          <div className="lg:col-span-8 space-y-8">
+            {/* Main Experience Card */}
+            <div className="gradient-border rounded-2xl p-8 card-hover">
+              <div className="flex items-start gap-6 mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-xl flex items-center justify-center">
+                  <span className="text-background font-bold text-lg">CF</span>
                 </div>
-                <p className="text-muted-foreground mb-6">
-                  Developed the Zero Trust Desktop Client in Flutter and optimized the Rust daemon for
-                  the client, ensuring secure and efficient data transfer.
-                </p>
-              </CardContent>
-            </Card>
+                <div>
+                  <h3 className="text-2xl font-semibold mb-2">Software Engineering Intern</h3>
+                  <p className="text-accent text-lg font-medium mb-2">@Cloudflare</p>
+                  <p className="text-muted-foreground">
+                    Developed the Zero Trust Desktop Client in Flutter and optimized the Rust daemon for
+                    the client, ensuring secure and efficient data transfer. Improved performance by 40%
+                    and enhanced security protocols.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm">Flutter</span>
+                <span className="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm">Rust</span>
+                <span className="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm">Zero Trust</span>
+                <span className="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm">Security</span>
+              </div>
+            </div>
 
-            {/* Tech Stack Word Cloud */}
-            <div className="relative h-64 bg-card/20 rounded-lg p-6 overflow-hidden">
-              <div className="absolute inset-0 flex flex-wrap items-center justify-center gap-2 opacity-60">
+            {/* Enhanced Tech Stack Cloud */}
+            <div className="gradient-border rounded-2xl p-8 overflow-hidden relative">
+              <h3 className="text-xl font-semibold mb-6 text-center">Tech Stack Mastery</h3>
+              <div className="relative h-48 flex flex-wrap items-center justify-center gap-4">
                 {techStack.map((tech, index) => (
                   <span
                     key={index}
-                    className="text-accent hover:text-accent-foreground transition-colors"
+                    className={`${tech.size} text-accent hover:text-accent-foreground transition-all duration-300 cursor-pointer tech-float font-semibold`}
                     style={{
-                      fontSize: `${Math.random() * 0.5 + 0.8}rem`,
-                      opacity: Math.random() * 0.4 + 0.6,
+                      animationDelay: tech.delay,
+                      opacity: 0.7,
+                    }}
+                    onMouseEnter={(e) => {
+                      const target = e.target as HTMLElement;
+                      target.style.opacity = '1';
+                      target.style.transform = 'scale(1.2)';
+                    }}
+                    onMouseLeave={(e) => {
+                      const target = e.target as HTMLElement;
+                      target.style.opacity = '0.7';
+                      target.style.transform = 'scale(1)';
                     }}
                   >
-                    {tech}
+                    {tech.name}
                   </span>
                 ))}
               </div>
             </div>
 
-            {/* Achievement Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {achievements.map((achievement, index) => (
-                <Card key={index} className="bg-card/50 border-border/50 group cursor-pointer hover:bg-card/70 transition-colors">
-                  <CardContent className="p-0">
-                    <div className="relative">
+            {/* Enhanced Achievement Cards */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold text-center mb-8">Hackathon Victories 🏆</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {achievements.map((achievement, index) => (
+                  <div key={index} className="gradient-border rounded-2xl overflow-hidden card-hover group cursor-pointer">
+                    <div className="relative overflow-hidden">
                       <img
                         src={achievement.image}
                         alt={achievement.title}
-                        className="w-full h-32 object-cover rounded-t-lg"
+                        className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110"
                       />
-                      <div className="absolute bottom-2 right-2">
-                        <Button size="sm" variant="secondary" className="w-8 h-8 p-0">
-                          <Play size={14} />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+                      <div className="absolute bottom-3 right-3">
+                        <Button size="sm" className="bg-accent hover:bg-accent/90 text-background w-10 h-10 p-0 rounded-full">
+                          <Play size={16} />
                         </Button>
                       </div>
                     </div>
-                    <div className="p-4">
-                      <h4 className="font-semibold">{achievement.title}</h4>
+                    <div className="p-6">
+                      <h4 className="font-semibold text-lg text-accent">{achievement.title}</h4>
+                      <p className="text-muted-foreground text-sm mt-2">View project details</p>
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

@@ -180,3 +180,54 @@ All colors MUST be HSL.
 .animate-fadeInUp {
   animation: fadeInUp 0.8s ease-out forwards;
 }
+
+/* Enhanced Animations */
+.tech-float {
+  animation: techFloat 4s ease-in-out infinite;
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px -10px hsl(var(--accent) / 0.3);
+}
+
+.gradient-border {
+  position: relative;
+  background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--card) / 0.8));
+  border: 1px solid hsl(var(--border));
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(135deg, hsl(var(--accent) / 0.3), hsl(var(--primary) / 0.2));
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: subtract;
+  pointer-events: none;
+}
+
+@keyframes techFloat {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-15px) scale(1.1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-8px) scale(0.95);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translateY(-12px) scale(1.05);
+    opacity: 0.7;
+  }
+}
