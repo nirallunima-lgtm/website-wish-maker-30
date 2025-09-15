@@ -1,12 +1,28 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import StarField from "@/components/StarField";
+import Navigation from "@/components/Navigation";
+import SocialSidebar from "@/components/SocialSidebar";
+import HeroSection from "@/components/sections/HeroSection";
+import AboutSection from "@/components/sections/AboutSection";
+import ExperienceSection from "@/components/sections/ExperienceSection";
+import ProjectsSection from "@/components/sections/ProjectsSection";
+import BlogsSection from "@/components/sections/BlogsSection";
+import ContactSection from "@/components/sections/ContactSection";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="relative min-h-screen">
+      <StarField />
+      <Navigation />
+      <SocialSidebar />
+      
+      <main className="relative z-10">
+        <HeroSection />
+        <AboutSection />
+        <ExperienceSection />
+        <ProjectsSection />
+        <BlogsSection />
+        <ContactSection />
+      </main>
     </div>
   );
 };
